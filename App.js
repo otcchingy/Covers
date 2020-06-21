@@ -26,9 +26,9 @@ export default class App extends Component {
       Roboto: require('native-base/Fonts/Roboto.ttf'),
       Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
       AntDesign: require('native-base/Fonts/AntDesign.ttf'),
-      rale_bold:require('native-base/Fonts/Raleway-Bold.ttf'),
-      rale_regular:require('native-base/Fonts/Raleway-Regular.ttf'),
-      rale_light:require('native-base/Fonts/Raleway-Light.ttf'),
+      rale_bold:require('./assets/fonts/Raleway-Bold.ttf'),
+      rale_regular:require('./assets/fonts/Raleway-Regular.ttf'),
+      rale_light:require('./assets/fonts/Raleway-Light.ttf'),
       ...Ionicons.font,
     });
     this.setState({ isReady: true });
