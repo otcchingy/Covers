@@ -4,7 +4,7 @@ import {Button, Container} from 'native-base';
 
 import {Text,ScrollView,View,StyleSheet} from 'react-native';
 
-import Constants from "expo-constants";
+
 
 
 export default class BackgroundScreen extends Component{
@@ -78,46 +78,45 @@ enforce our Terms of Use and/or comply with legal requirements.`
     }
     render(){
         return(
-            <Container style={{backgroundColor:'#fff'}}>
-            <View style={{flex:1,marginHorizontal:16,marginTop:15,backgroundColor:'#fff'}}>
-            <ScrollView>
-            <View style={{marginBottom: 20,}}>
+            <ScrollView style={{flex:1,backgroundColor:'#fff'}}>
+            <View style={{padding:20}}>
+            <View style={{paddingBottom:15}}>
             <Text style={styles.title}>{this.state.set1.title}</Text>
             <Text style={styles.data}>{this.state.set1.data}</Text>
             </View>
-            <View  style={{marginBottom: 20,}}>
+            <View  style={{paddingBottom: 15}}>
             <Text style={styles.title}>{this.state.set2.title}</Text>
             <Text style={styles.data}>{this.state.set2.data}</Text>
             </View>
-            <View  style={{marginBottom: 20,}}>
+            <View  style={{paddingBottom: 15}}>
             <Text style={styles.title}>{this.state.set3.title}</Text>
             <Text style={styles.data}>{this.state.set3.data}</Text>
             </View>
-            <View  style={{marginBottom: 20,}}>
+            <View  style={{paddingBottom: 15}}>
             <Text style={styles.title}>{this.state.set4.title}</Text>
             <Text style={styles.data}>{this.state.set4.data}</Text>
             </View>
-            <View  style={{marginBottom: 20,}}>
+            <View  style={{paddingBottom: 15}}>
             <Text style={styles.title}>{this.state.set5.title}</Text>
             <Text style={styles.data}>{this.state.set5.data}</Text>
             </View>
-            <View  style={{marginBottom: 20,}}>
+            <View  style={{paddingBottom: 15}}>
             <Text style={styles.title}>{this.state.set6.title}</Text>
             <Text style={styles.data}>{this.state.set6.data}</Text>
             </View>
-            <View  style={{marginBottom: 20,}}>
+            <View  style={{paddingBottom: 15}}>
             <Text style={styles.title}>{this.state.set7.title}</Text>
             <Text style={styles.data}>{this.state.set7.data}</Text>
             </View>
-            <View  style={{marginBottom: 20,}}>
+            <View  style={{paddingBottom: 15}}>
             <Text style={styles.title}>{this.state.set8.title}</Text>
             <Text style={styles.data}>{this.state.set8.data}</Text>
             </View>
-            <View  style={{marginBottom: 20,}}>
+            <View  style={{paddingBottom: 15}}>
             <Text style={styles.title}>{this.state.set9.title}</Text>
             <Text style={styles.data}>{this.state.set9.data}</Text>
             </View>
-            <View  style={{marginBottom: 20,}}>
+            <View  style={{paddingBottom: 15}}>
             <Text style={styles.title}>{this.state.set10.title}</Text>
             <Text style={styles.data}>{this.state.set10.data}</Text>
             </View>
@@ -127,15 +126,16 @@ enforce our Terms of Use and/or comply with legal requirements.`
             <Text style={styles.data}>Haatso,Accra</Text>
             <Text style={styles.data}>Ghana</Text>
             </View>
-            </ScrollView>
-            <Button dark
+            
+            <Button dark block
             style={{height:55,justifyContent:'center'}}
             onPress={()=>this.props.navigation.navigate('Root')}
             >
-            <Text style={{color:'#fff',fontFamily:'rale_bold'}}>Let's get started...</Text>
+            <Text style={{color:'#fff',fontFamily:'rale_bold',fontSize:14}}>Let's get started...</Text>
             </Button>
             </View>
-            </Container>
+            </ScrollView>
+            
         )
     }
 }
@@ -144,10 +144,10 @@ enforce our Terms of Use and/or comply with legal requirements.`
 const styles=StyleSheet.create({
     title:{
         fontFamily:'rale_bold',
-        fontSize:15
+        fontSize:16
     },
     data:{
-        fontSize:12,
+        fontSize:14,
         fontFamily:'rale_regular'
     }
 

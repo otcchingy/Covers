@@ -48,8 +48,8 @@ export default class HeaderRight extends Component{
           }}
         >
         <View style={styles.container}>
-        <View style={{alignItems:'center',margin:20}}>
-        <Text style={{fontFamily:'rale_bold',fontSize:16}}>Notifications</Text>
+        <View style={{alignItems:'center',padding:20}}>
+        <Text style={{fontFamily:'rale_bold',fontSize:18}}>Notifications</Text>
         </View>
         <View style={styles.cover}>
         <Text style={styles.title}>{DATA1[0].title}</Text>

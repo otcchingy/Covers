@@ -16,33 +16,36 @@ export default class VerifyScreen extends Component{
         const {data}=this.props.route.params
         return(
             <View style={{flex:1,backgroundColor:'#FFFF',}}>
-            <View style={{marginTop:250,alignItems:'center'}} >
-            <View style={{marginBottom:30,}}>
-            <Text style={{fontSize:16,fontWeight:'bold',fontFamily:'Roboto_medium'}}> Verification PIN</Text>
+            <View style={{paddingTop:150,alignItems:'center',justifyContent:'center'}} >
+            <View style={{}}>
+            <Text style={{fontSize:22,fontFamily:'rale_bold'}}> Verification PIN</Text>
             </View>
-            <View style={{marginBottom:30}}>
-            <Text style={{fontFamily:'Roboto',fontSize:12}}>Enter the verification code</Text>
-            <Text style={{fontFamily:'Roboto',alignSelf:'center',fontSize:12}}>we just sent you on</Text>
-            <Text style={{fontFamily:'Roboto',alignSelf:'center',fontSize:12}}>{data}</Text>
+            <View style={{}}>
+            <Text style={{fontFamily:'rale_bold',fontSize:14}}>Enter the verification code</Text>
+            <Text style={{fontFamily:'rale_bold',alignSelf:'center',fontSize:14}}>we just sent you on</Text>
+            <Text style={{fontFamily:'rale_bold',alignSelf:'center',fontSize:20}}>{data}</Text>
             </View>
+            <View style={{flexDirection:'row'}}>
             <TextInput keyboardType={'number-pad'}
             style={{
-                width:280,
+                flex:0.66,
                 height:50,borderBottomWidth:2,
                 textAlign:'center',fontSize:20,
-                marginBottom:25
             }}
             onChangeText={(value)=>this.setState({code:value,validity:false})}
             maxLength={4}
             />
-            <Button info
+            </View>
+            <View style={{flexDirection:'row',paddingTop:10}}>
+            <Button dark
              disabled={!Boolean(this.state.code)}
-            style={{width:280,height:48,justifyContent:'center',marginBottom:40}}
+            style={{flex:0.67,height:48,justifyContent:'center'}}
             onPress={()=>this.props.navigation.navigate('General Information')}
             >
             <Text style={{color:'#fff',fontFamily:'Roboto'}}> Submit code</Text>
             </Button>
-            <View>
+            </View>
+            <View style={{paddingTop:10}}>
             <Text style={{fontFamily:'Roboto',fontSize:12}}> Have not received your code?</Text>
             </View>
             <Button transparent><Text style={{fontFamily:'Roboto_medium',fontSize:14}}> Resend Code</Text></Button>

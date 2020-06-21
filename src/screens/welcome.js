@@ -18,50 +18,51 @@ export default class WelcomeScreen extends Component{
         return(
             <View style={{flex:1}}>
             <ImageBackground source={require('../../assets/images/welcome.png')}
-            style={{width:'100%',height:'100%'}}
+            style={{flex:1}}
             >
             <View style={{
-                fontFamily:'Roboto',
-                marginTop:200 
+                paddingTop:150 ,flex:1,
+                marginHorizontal:15
             }}>
             <View style={{
                 
             }}>
             <Text style={{
                 color:'#f3f3f3',
-                fontSize: 55,fontWeight:'bold'
-                ,textAlign:'center'
+                fontSize: 60
+                ,textAlign:'center',fontFamily:'rale_bold'
             }}>COVERS</Text>
             <Text style={{
-                color:'#f3f3f3',fontWeight:'bold',
-                fontSize:12,textAlign:'center'
+                color:'#f3f3f3',fontFamily:'rale_bold',
+                fontSize:14,textAlign:'center'
             }}>(COVID-19 EMERGENCY RESPONSE SOLUTION)</Text>
             </View>
             <View>
             <Text style={{
                 color:'#f3f3f3',
-                fontSize:11,textAlign:'center'
-            }}>Join the effort by well-meaning Africans using technology to slow</Text>
-            <Text style={{
-                color:'#f3f3f3',
-                fontSize:11,textAlign:'center'
-            }}>down and eventually halt the spread of COVID-19</Text>
+                fontSize:14,textAlign:'center',fontFamily:'rale_regular'
+            }}>Join the effort by well-meaning Africans using technology to slow down and eventually halt the spread of COVID-19</Text>
             </View>
+            <View style={{flexDirection:'row',justifyContent:'center',paddingTop:40,}}>
             <TextInput keyboardType={'phone-pad'}
             value={this.state.phone}
             onChangeText={(value)=>this.setState({phone:value,validity:false})}
             style={{
+                flex:1,
                 backgroundColor:'#f3f3f3',
-                marginTop:30,borderRadius:5,fontWeight:'bold',
-                width:350,height:50,alignSelf:'center'
+                borderRadius:5,fontFamily:'rale_regular',
+                fontSize:14,
+                height:50,alignSelf:'center'
             }}
             placeholder='Phone Number'
             maxLength={10}
             />
+            </View>
+            <View style={{flexDirection:'row',paddingTop:15}}>
             <Button success
             disabled={!Boolean(this.state.phone)}
             style={{
-                width:350,marginTop:10,
+                flex:1,
                 height:50,alignSelf:'center',justifyContent:'center',
                 borderRadius:5
             }}
@@ -69,6 +70,7 @@ export default class WelcomeScreen extends Component{
             >
             <Text>Get Started..</Text>
             </Button>
+            </View>
             </View>
             </ImageBackground>
             </View>

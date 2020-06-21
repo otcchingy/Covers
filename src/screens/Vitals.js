@@ -26,12 +26,12 @@ export default class VitalsScreen extends Component{
 
     render(){
         return(
-            <Container>
+            <Container style={{flex:1}}>
             <View style={{height:50,marginLeft:20}}>
             <Text style={{fontFamily:'Roboto_medium',fontSize:30}}>Vitals</Text>
             </View>
             <View
-            style={{alignItems:'center'}}
+            style={{justifyContent:'center',flex:0.5,flexDirection:'row'}}
             >
             <Button transparent
             style={{
@@ -39,7 +39,7 @@ export default class VitalsScreen extends Component{
                 borderStyle:'dashed',
                 borderColor:'#000',
                 borderWidth:1,
-                width:150,height:55,
+                flex:0.5,height:55,
             
             }}
             onPress={()=>this.setState({show:true})}
@@ -47,22 +47,21 @@ export default class VitalsScreen extends Component{
             <Text
             style={{
                 textTransform:'capitalize',
-                color:'#000',fontFamily:'rale_regular',
-                fontWeight:'400',fontSize:12
+                color:'#000',fontFamily:'rale_bold',
+                fontSize:16
         }}
             >Log Vitals</Text>
             </Button>
             </View>
             <View>
             <Modal
-            style={{width:420,backgroundColor:'none',margin:0,height:180,justifyContent:'flex-start',paddingTop:10}}
+            style={{flex:1,backgroundColor:'none',margin:0,height:180,justifyContent:'flex-start',paddingTop:10}}
             animationType = {"slide"}
             
-            transparent={true}
+            transparent={false}
             visible={this.state.show}
             onRequestClose={() => {
-                Alert.alert('Modal has now been closed.');
-                
+                this.close(!this.state.show);
             }}
             >
             
@@ -100,6 +99,6 @@ const styles=StyleSheet.create({
         backgroundColor: "white",
         borderTopRightRadius: 5,borderTopLeftRadius:5,
         padding:15,
-        height:727
+        height:727,flex:1
       }
 })

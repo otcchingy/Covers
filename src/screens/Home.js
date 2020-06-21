@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import {View,StyleSheet,ScrollView,ImageBackground} from 'react-native';
+import {View,ScrollView,ImageBackground} from 'react-native';
 
-import {Button,Container,Header,Card,CardItem,Left,Text,Content, Right,Body} from 'native-base';
+import {Card,CardItem,Text} from 'native-base';
 
 import {DATA} from '../index';
 
@@ -11,14 +11,14 @@ import {DATA} from '../index';
 export default class HomeScreen extends Component{
     render(){
         return(
-            <Container style={{backgroundColor:'#fff'}}>
-            <View style={{height:50,marginLeft:20}}>
-            <Text style={{fontFamily:'Roboto_medium',fontSize:30}}>Home</Text>
+            <View style={{backgroundColor:'#fff',flex:1}}>
+            <View style={{height:60,padding:10}}>
+            <Text style={{fontFamily:'rale_bold',fontSize:35}}>Home</Text>
             </View>
             <ScrollView>
-            <View>
+            <View style={{flex:1,padding:10}}>
             <ScrollView horizontal={true}>
-            <Card style={{height:165,marginLeft:5,marginRight:14}} transparent>
+            <Card style={{height:165}} transparent>
             <CardItem cardBody>
             <ImageBackground source={require('../../assets/images/confirmed.jpg')}
             style={{width:280,height:165}} borderRadius={12}
@@ -30,7 +30,7 @@ export default class HomeScreen extends Component{
             </ImageBackground>
             </CardItem>
             </Card>
-            <Card style={{height:165,marginRight:14}} transparent>
+            <Card style={{height:165}} transparent>
             <CardItem cardBody >
             <ImageBackground source={require('../../assets/images/recovered.jpg')}
             style={{width:280,height:165}} borderRadius={12}
@@ -42,7 +42,7 @@ export default class HomeScreen extends Component{
             </ImageBackground>
             </CardItem>
             </Card>
-            <Card style={{height:165,marginRight:5}}transparent>
+            <Card style={{height:165}}transparent>
             <CardItem cardBody>
             <ImageBackground source={require('../../assets/images/death.jpg')}
             style={{width:280,height:165}} borderRadius={12}
@@ -56,26 +56,26 @@ export default class HomeScreen extends Component{
             </Card>
             </ScrollView>
             </View>
-            <View style={{marginLeft:20,marginTop:15}}>
+            <View style={{padding:20}}>
             <Text style={{fontFamily:'rale_bold',fontSize:18}}>Ghana's Situation Updates</Text>
             <Text style={{fontFamily:'rale_regular',fontSize:12}}>Last Updated:4/16/2020</Text>
             </View>
-            <View style={{flex:1,marginHorizontal:45,marginTop:35}}>
-            <View style={{marginBottom:70}}>
+            <View style={{flex:1,padding:30}}>
+            <View style={{padding:15}}>
             <Text style={{fontFamily:'rale_bold'}}>{DATA[0].title}</Text>
             <Text style={{fontFamily:'rale_regular',fontSize:14,marginTop:18}}>{DATA[0].data}</Text>
             </View>
-            <View style={{marginBottom:70}}>
+            <View style={{padding:15}}>
             <Text style={{fontFamily:'rale_bold'}}>{DATA[0].title}</Text>
             <Text style={{fontFamily:'rale_regular',fontSize:14,marginTop:18}}>{DATA[0].data}</Text>
             </View>
-            <View>
+            <View style={{padding:15}}>
             <Text style={{fontFamily:'rale_bold'}}>{DATA[0].title}</Text>
             <Text style={{fontFamily:'rale_regular',fontSize:14,marginTop:18}}>{DATA[0].data}</Text>
             </View>
             </View>
             </ScrollView>
-            </Container>
+            </View>
         )
     }
 }
