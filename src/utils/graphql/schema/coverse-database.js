@@ -1,4 +1,4 @@
-const schema = 	`
+const schema = `
     
     directive @cacheControl(
       maxAge: Int

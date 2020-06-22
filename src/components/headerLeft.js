@@ -2,7 +2,7 @@ import {Ionicons} from '@expo/vector-icons';
 
 import React, {Component} from 'react';
 
-import {Text, View, StyleSheet, TextInput, Alert, TouchableOpacity} from 'react-native';
+import {Alert, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
 
 import {Button} from 'native-base';
 
@@ -12,6 +12,15 @@ import Picker from './country';
 
 
 export default class HeaderLeft extends Component {
+    onChange = (phone) => {
+        this.setState({phone: phone})
+        this.setState({phone1: false})
+    }
+    onChange1 = () => {
+        this.setState({phone1: true})
+        this.setState({phone: false})
+    }
+
     constructor(props) {
 
         super(props)
@@ -22,15 +31,6 @@ export default class HeaderLeft extends Component {
             validity: true
         }
 
-    }
-
-    onChange = (phone) => {
-        this.setState({phone: phone})
-        this.setState({phone1: false})
-    }
-    onChange1 = () => {
-        this.setState({phone1: true})
-        this.setState({phone: false})
     }
 
     close(show1) {
@@ -58,7 +58,7 @@ export default class HeaderLeft extends Component {
                 >
                     <View style={styles.modalView}>
                         <View style={{flex: 0.1, flexDirection: 'row', justifyContent: 'space-between'}}>
-                            <Text style={{fontFamily: 'rale_bold', fontSize: 35}}>Profile</Text>
+                            <Text style={{fontFamily: 'air_bnb_bold', fontSize: 35}}>Profile</Text>
                             <Ionicons name="md-close" size={30} color="black"
                                       onPress={() => {
                                           this.close(!this.state.show);
@@ -67,9 +67,9 @@ export default class HeaderLeft extends Component {
                             />
                         </View>
                         <View style={{flex: 1}}>
-                            <Text style={{fontFamily: 'rale_regular', fontWeight: 'bold', paddingTop: 10}}>Personal
+                            <Text style={{fontFamily: 'air_bnb_regular', fontWeight: 'bold', paddingTop: 10}}>Personal
                                 Details</Text>
-                            <Text style={{fontFamily: 'rale_regular', fontSize: 12, paddingTop: 10}}>Enter Age</Text>
+                            <Text style={{fontFamily: 'air_bnb_regular', fontSize: 12, paddingTop: 10}}>Enter Age</Text>
                             <View style={{paddingTop: 10}}>
                                 <TextInput
                                     keyboardType='number-pad'
@@ -92,7 +92,7 @@ export default class HeaderLeft extends Component {
                                         </Button>
                                         <Text style={{
                                             paddingHorizontal: 10,
-                                            fontFamily: 'rale_regular',
+                                            fontFamily: 'air_bnb_regular',
                                             fontSize: 12,
                                             alignSelf: 'center'
                                         }}>Female</Text>
@@ -108,7 +108,7 @@ export default class HeaderLeft extends Component {
                                         </Button>
                                         <Text style={{
                                             paddingHorizontal: 10,
-                                            fontFamily: 'rale_regular',
+                                            fontFamily: 'air_bnb_regular',
                                             fontSize: 12,
                                             alignSelf: 'center'
                                         }}>Male</Text>
@@ -116,9 +116,9 @@ export default class HeaderLeft extends Component {
                                 </TouchableOpacity>
                             </View>
                             <View style={{paddingTop: 20}}>
-                                <Text style={{fontFamily: 'rale_bold'}}>Travel History</Text>
+                                <Text style={{fontFamily: 'air_bnb_bold'}}>Travel History</Text>
                                 <Text
-                                    style={{fontFamily: 'rale_regular', fontSize: 10}}
+                                    style={{fontFamily: 'air_bnb_regular', fontSize: 10}}
                                 >Select the last two countries you visited(If Applicable)</Text>
                             </View>
                             <View style={{flexDirection: 'row', paddingTop: 15}}>
@@ -144,9 +144,9 @@ export default class HeaderLeft extends Component {
 
                             </View>
                             <View style={{paddingTop: 20}}>
-                                <Text style={{fontFamily: 'rale_regular', fontWeight: 'bold'}}>Medical Professional
+                                <Text style={{fontFamily: 'air_bnb_regular', fontWeight: 'bold'}}>Medical Professional
                                     Information</Text>
-                                <Text style={{fontFamily: 'rale_regular', fontSize: 10}}>Applicable if you are a health
+                                <Text style={{fontFamily: 'air_bnb_regular', fontSize: 10}}>Applicable if you are a health
                                     worker</Text>
                             </View>
                             <View style={{paddingTop: 20}}>
@@ -170,7 +170,7 @@ export default class HeaderLeft extends Component {
                                             this.close(!this.state.show), Alert.alert('Your Profile has been updated')
                                         }}
                                 >
-                                    <Text style={{color: '#fff', fontFamily: 'rale_bold'}}>Update Profile</Text>
+                                    <Text style={{color: '#fff', fontFamily: 'air_bnb_bold'}}>Update Profile</Text>
                                 </Button>
                             </View>
                         </View>

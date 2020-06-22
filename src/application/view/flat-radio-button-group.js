@@ -6,16 +6,8 @@ import FlatRadioButton from './flat-radio-button';
 
 export default class FlatRadioButtonGroup extends Component {
 
-    constructor(props){
-        super(props);
-
-        this.state = {
-            selectedIndex: this.props.hasOwnProperty('default') ? this.props.default : 0
-        };
-    }
-
     buildFlatRadioButton = ({key, label}) => {
-      
+
         return (
             <ViewItem
                 contentGravity={'center'}
@@ -26,14 +18,14 @@ export default class FlatRadioButtonGroup extends Component {
                     key={key}
                     toggle={false}
                     borderWidth={1}
-                    borderRadius={this.props.hasOwnProperty('radioSize') ? this.props.radioSize/2 : 20}
+                    borderRadius={this.props.hasOwnProperty('radioSize') ? this.props.radioSize / 2 : 20}
                     borderColor={this.state.selectedIndex === key ? '#A2AEC2' : 'black'}
                     backgroundColor={this.state.selectedIndex === key ? '#A2AEC2' : 'white'}
                     contentGravity={'center'}
                     selected={this.state.selectedIndex === key}
                     onPress={() => {
-                        if (this.state.selectedIndex !== key && this.props.hasOwnProperty('onChange')){
-                            this.props.onChange({ key: key, value: label })
+                        if (this.state.selectedIndex !== key && this.props.hasOwnProperty('onChange')) {
+                            this.props.onChange({key: key, value: label})
                         }
                         this.setState({selectedIndex: key})
                     }}>
@@ -46,8 +38,10 @@ export default class FlatRadioButtonGroup extends Component {
 
                 </FlatRadioButton>
 
-                <Text style={{color: 'black', padding: this.props.hasOwnProperty('labelPadding') ?
-                        this.props.labelPadding : 4}}>
+                <Text style={{
+                    color: 'black', padding: this.props.hasOwnProperty('labelPadding') ?
+                        this.props.labelPadding : 4
+                }}>
                     {label}
                 </Text>
 
@@ -55,6 +49,14 @@ export default class FlatRadioButtonGroup extends Component {
         )
 
     };
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            selectedIndex: this.props.hasOwnProperty('default') ? this.props.default : 0
+        };
+    }
 
     render() {
 

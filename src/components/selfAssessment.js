@@ -34,7 +34,7 @@ export default class AssessmentModal extends Component {
 
                 <View style={styles.modalView}>
                     <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                        <Text style={{fontFamily: 'rale_bold', fontSize: 35}}>Self Assessment</Text>
+                        <Text style={{fontFamily: 'air_bnb_bold', fontSize: 35}}>Self Assessment</Text>
                         <Ionicons name="md-close" size={30} color="black"
                                   onPress={() => {
                                       this.close(!this.state.show);
@@ -51,7 +51,7 @@ export default class AssessmentModal extends Component {
                                         this.close(!this.state.show)
                                     }}
                         >
-                            <Text style={{color: '#fff', fontFamily: 'rale_bold'}}>Start Assessment...</Text>
+                            <Text style={{color: '#fff', fontFamily: 'air_bnb_bold'}}>Start Assessment...</Text>
                         </Button>
                     </View>
                 </View>
