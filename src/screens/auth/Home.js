@@ -4,11 +4,46 @@ import {View,ScrollView,ImageBackground} from 'react-native';
 
 import {Card,CardItem,Text} from 'native-base';
 
-import {DATA} from '../index';
+import {DATA} from '../../index';
 
-
+const {GhanaStats} = require('../../utils/graphql/queries/queries');
+import axios from "axios";
 
 export default class HomeScreen extends Component{
+
+    constructor(props){
+        super(props);
+        this.state = {
+            stats: {
+                cases: '',
+                deaths: '',
+                critical: '',
+                recovered: ''
+            }
+        };
+        this.loadStats()
+
+    }
+
+    loadStats= ()=>{
+
+        axios({
+            url: 'https://covid19-graphql.netlify.app/',
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: {
+                query: GhanaStats
+            },
+        }).then((result) => {
+            console.log(result.data.data.country.result);
+            this.setState({stats: result.data.data.country.result})
+        }).catch(err=>{
+            console.log(err);
+        });
+    };
+
     render(){
         return(
             <View style={{backgroundColor:'#fff',flex:1}}>
@@ -20,11 +55,11 @@ export default class HomeScreen extends Component{
             <ScrollView horizontal={true}>
             <Card style={{height:165}} transparent>
             <CardItem cardBody>
-            <ImageBackground source={require('../../assets/images/confirmed.jpg')}
+            <ImageBackground source={require('../../../assets/images/confirmed.jpg')}
             style={{width:280,height:165}} borderRadius={12}
             >
             <View style={{alignItems:'flex-end'}}>
-            <Text style={{fontSize:40,fontFamily:'rale_bold',color:'#fff'}}>641</Text>
+            <Text style={{fontSize:40,fontFamily:'rale_bold',color:'#fff'}}>{this.state.stats.cases}</Text>
             <Text style={{fontSize:20,fontFamily:'Roboto_medium',color:'#fff'}}>Confirmed Cases</Text>
             </View>
             </ImageBackground>
@@ -32,23 +67,23 @@ export default class HomeScreen extends Component{
             </Card>
             <Card style={{height:165}} transparent>
             <CardItem cardBody >
-            <ImageBackground source={require('../../assets/images/recovered.jpg')}
+            <ImageBackground source={require('../../../assets/images/recovered.jpg')}
             style={{width:280,height:165}} borderRadius={12}
             >
             <View style={{alignItems:'flex-end'}}>
-            <Text style={{fontSize:40,fontFamily:'rale_bold',color:'#fff'}}>83</Text>
+            <Text style={{fontSize:40,fontFamily:'rale_bold',color:'#fff'}}>{this.state.stats.recovered}</Text>
             <Text style={{fontSize:20,fontFamily:'Roboto_medium',color:'#fff'}}>Recovered</Text>
             </View>
             </ImageBackground>
             </CardItem>
             </Card>
-            <Card style={{height:165}}transparent>
+            <Card style={{height:165}} transparent>
             <CardItem cardBody>
-            <ImageBackground source={require('../../assets/images/death.jpg')}
+            <ImageBackground source={require('../../../assets/images/death.jpg')}
             style={{width:280,height:165}} borderRadius={12}
             >
             <View style={{alignItems:'flex-end'}}>
-            <Text style={{fontSize:40,fontFamily:'rale_bold',color:'#fff'}}>8</Text>
+            <Text style={{fontSize:40,fontFamily:'rale_bold',color:'#fff'}}>{this.state.stats.deaths}</Text>
             <Text style={{fontSize:20,fontFamily:'Roboto_medium',color:'#fff'}}>Deaths</Text>
             </View>
             </ImageBackground>

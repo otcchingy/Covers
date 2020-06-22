@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 
 import {Button, Container} from 'native-base';
 
-import {Text,ScrollView,View,StyleSheet} from 'react-native';
+import {Text,ScrollView,View,StyleSheet,TouchableOpacity,ActivityIndicator, Dimensions} from 'react-native';
 
 
 
@@ -72,13 +72,22 @@ enforce our Terms of Use and/or comply with legal requirements.`
                     id:10,
                     title:'Contact Us',
                     data:'If you have questions or comments about this Privacy Policy,please contact us at'
-                }
-            
+                },
+            loading:false
         }
     }
+    handleButton=()=> {
+        this.setState({loading:true});
+        setTimeout(() => {
+            this.props.navigation.navigate('Root')
+          this.setState({loading:false})
+        }, 1000);
+    }
     render(){
+        const {width}=Dimensions.get('window');
         return(
-            <ScrollView style={{flex:1,backgroundColor:'#fff'}}>
+            <View style={{flex:1,backgroundColor:'#fff'}}>
+            <ScrollView>
             <View style={{padding:20}}>
             <View style={{paddingBottom:15}}>
             <Text style={styles.title}>{this.state.set1.title}</Text>
@@ -126,15 +135,28 @@ enforce our Terms of Use and/or comply with legal requirements.`
             <Text style={styles.data}>Haatso,Accra</Text>
             <Text style={styles.data}>Ghana</Text>
             </View>
-            
-            <Button dark block
-            style={{height:55,justifyContent:'center'}}
-            onPress={()=>this.props.navigation.navigate('Root')}
-            >
-            <Text style={{color:'#fff',fontFamily:'rale_bold',fontSize:14}}>Let's get started...</Text>
-            </Button>
             </View>
             </ScrollView>
+            <View style={{paddingHorizontal:20}}>
+            <TouchableOpacity onPress={this.handleButton} style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: 54,
+                backgroundColor: 'black',
+            }}>
+              {this.state.loading ? (
+                <ActivityIndicator color={'#fff'} />
+              ) : (
+                <Text style={{
+                    color: '#fff',
+                    textAlign: 'center',
+                    fontWeight: '500',
+                    paddingTop: 5,
+                }}>Let's get started...</Text>
+              )}
+            </TouchableOpacity>
+            </View>
+            </View>
             
         )
     }

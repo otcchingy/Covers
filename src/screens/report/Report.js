@@ -8,7 +8,7 @@ import Modal from 'react-native-modal';
 
 import {Button,Container} from 'native-base';
 
-import {Actions} from 'react-native-router-flux';
+
 
 
 export default class ReportScreen extends Component{

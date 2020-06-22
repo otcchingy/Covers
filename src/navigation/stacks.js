@@ -4,9 +4,9 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import React,{Component} from 'react';
 
-import BackgroundScreen from './../screens/backgroundInfo';
-import VerifyScreen from './../screens/verifyPhone';
-import WelcomeScreen from './../screens/welcome';
+import BackgroundScreen from './../screens/auth/backgroundInfo';
+import VerifyScreen from './../screens/auth/verifyPhone';
+import WelcomeScreen from './../screens/auth/welcome';
 
 import RootStack from './RootStack';
 

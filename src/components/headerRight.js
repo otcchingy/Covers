@@ -19,9 +19,9 @@ export default class HeaderRight extends Component{
     }
     render(){
         return(
-            <View>
-            <Ionicons name="ios-notifications-outline" size={45} color="black"
-                    style={{marginRight:20}}
+            <View style={{flex:1,justifyContent:'center'}}>
+            <Ionicons name="ios-notifications-outline" size={50} color="black"
+                    style={{padding:20}}
                     onPress={() => this.RBSheet.open()}
                     />
                     <RBSheet
@@ -30,8 +30,8 @@ export default class HeaderRight extends Component{
           }}
           animationType="slide"
           closeOnDragDown={true}
-          height={730}
-          openDuration={250}
+          height={800}
+          openDuration={50}
           customStyles={{
               wrapper:{
                 
@@ -93,13 +93,14 @@ export default class HeaderRight extends Component{
 
 const styles=StyleSheet.create({
     container:{
-        marginHorizontal:30
+        flex:1,
+        padding:30
     },
     cover:{
         flexDirection:'row',
-        marginTop:20,
-        height:60,borderBottomWidth:0.2,borderColor:'rgb(220, 220, 220)',
-        alignItems:'center',justifyContent:'space-between'
+        paddingTop:20,
+        height:50,borderBottomWidth:0.2,borderColor:'rgb(220, 220, 220)',
+        alignItems:'center',justifyContent:'space-between',flex:1
     },
     title:{
         fontFamily:'rale_regular',

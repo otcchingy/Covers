@@ -1,6 +1,6 @@
- export const DATA=[
+export const DATA = [
     {
-        title:`Confirmed Covid-19 Cases in Ghana As At 11 May 2020,09:00 Hr`,
+        title: `Confirmed Covid-19 Cases in Ghana As At 11 May 2020,09:00 Hr`,
         data: `As at the morning of 11 May 2020, a total of sixty-eight(68) cases including two (2) deaths
 have been confirmed.Sixty-six(66) of these confirmed cases are being managed in isolation.The sudden
 spike in case incidence is as a result of the mandatory quarantine and compulsory testing for 

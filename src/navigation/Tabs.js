@@ -8,11 +8,11 @@ import { Container } from 'native-base';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import HomeScreen from './../screens/Home';
-import SettingsScreen from './../screens/Settings';
-import VitalsScreen from './../screens/Vitals';
+import HomeScreen from './../screens/auth/Home';
+import SettingsScreen from './../screens/settings/Settings';
 
 import Reports from './reportStack';
+import Vitals from './vitalsStack';
 
 const Tab=createBottomTabNavigator();
 export default class TabsScreen extends Component{
@@ -55,7 +55,7 @@ export default class TabsScreen extends Component{
             >
             <Tab.Screen name="Home"     component={HomeScreen} />
             <Tab.Screen name="Report"   component={Reports}/>
-            <Tab.Screen name="Vitals"   component={VitalsScreen}/>
+            <Tab.Screen name="Vitals"   component={Vitals}/>
             <Tab.Screen name="Settings" component={SettingsScreen}/>
             </Tab.Navigator>
             

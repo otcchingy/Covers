@@ -2,8 +2,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import React,{Component} from 'react';
 
-import ReportScreen from './../screens/Report';
-import UpdateReportScreen from './../screens/updateReport';
+import ReportScreen from './../screens/report/Report';
+import UpdateReportScreen from './../screens/report/updateReport';
 
 
 const RStack=createStackNavigator();
