@@ -60,14 +60,11 @@ export default class SettingsScreen extends Component{
             url: 'https://covid19-graphql.netlify.app/',
             method: 'post',
             data: {
-                query: CountryStats,
-                variables:{
-                    key: name
-                }
+                query: CountryStats.replace("KEY", name)
             }
         }).then((result) => {
             console.log(result.data.data);
-            this.setState({countryStats: result.data.data.country.results})
+            this.setState({countryStats: result.data.data.country.result})
         }).catch(err=>{
             console.log(err);
         });

@@ -89,21 +89,20 @@ const GhanaStats = `
 
 const CountryStats = `
     query {
-        CountryStats($key: String!){
-            country(name: $key){
-                country
-                result{
-                    cases
-                    recovered
-                    deaths
-                    updated
-                    active
-                    critical
-                    tests
-                    updated
-                }
+        country(name: "KEY"){
+            country
+            result{
+                cases
+                recovered
+                deaths
+                updated
+                active
+                critical
+                tests
+                updated
             }
         }
+        
     }
 `
 
