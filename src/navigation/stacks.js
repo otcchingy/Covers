@@ -3,7 +3,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import React, {Component} from 'react';
 
 import BackgroundScreen from '../screens/infoScreen';
-import VerifyScreen from '../screens/verifyScrees';
+import VerifyScreen from '../screens/verifyScreen';
 import WelcomeScreen from '../screens/welcomeScreen';
 
 import RootNavigation from './root-navigation';
